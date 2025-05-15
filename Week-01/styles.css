@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&display=swap');
+
+:root {
+    --dark-color: #151515;
+    --secondary-color: #878787;
+    --danger-color: #FF6161; 
+    --red-color: #FF4242;
+    --border-color: #EBEBEB;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0
+}
+
+body {
+    font-family: 'Hanken Grotesk';
+    min-height: 100dvh;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;  
+    margin-bottom: 0.5rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: var(--dark-color);
+    font-weight: 600;
+}
+
+h1 + p {
+    font-size: 1rem;
+    color: var(--secondary-color);
+    font-weight: 400;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 18px;
+    min-width: 450px;
+}
+
+form > div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form > div > input {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+input::placeholder {
+    color: var(--secondary-color);
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid var(--dark-color);
+}
+
+.password-hint {
+    font-size: 0.875rem;
+    color: var(--secondary-color);
+}
+
+label > span {
+    color: var(--danger-color);
+}
+
+.terms {
+    font-size: 0.875rem;
+    color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-left: 0.25rem;
+}
+
+input[type="checkbox"] {
+    transform: scale(1.5);
+}
+
+button {
+    width: 100%;
+    padding: 1.25rem;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--dark-color);
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 400;
+    cursor: pointer;
+    margin-top: 2.5rem
+}
+
+form + p {
+    font-size: 0.875rem;
+    color: var(--secondary-color);
+}
+
+a {
+    color: #FF954A;
+}
+
+
+
+
+.error {
+    border: 1px solid var(--danger-color);
+}
+
+.error-message {
+    color: var(--danger-color);
+    font-size: 0.875rem;
+    font-weight: 400;
+}
+
+
+
+
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    background-color: #eee;
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+    padding-block: 5rem;
+}

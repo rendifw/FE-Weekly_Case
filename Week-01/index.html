@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Week 1 - Sign up</title>
+  </head>
+  <body>
+    <header>
+      <h1>Create your account</h1>
+      <p>Let's get started with your 30 days free trial</p>
+    </header>
+    <form>
+      <div class="name">
+        <label for="name">Name<span>*</span></label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="johndoe"
+        />
+      </div>
+
+      <div class="email">
+        <label for="email">Email<span>*</span></label>
+        <input
+          type="text"
+          id="email"
+          name="email"
+          placeholder="johndoe@gmail.com"
+        />
+      </div>
+
+      <div class="password">
+        <label for="password">Password<span>*</span></label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="*******"
+        />
+        <p class="password-hint">
+          Password needs to have a minimal of 8 characters, 1 uppercase and 1
+          symbol
+        </p>
+      </div>
+
+      <div class="confirm">
+        <label for="retype-password">Retype Password<span>*</span></label>
+        <input
+          type="password"
+          id="retype-password"
+          name="retype-password"
+          placeholder="*******"
+        />
+      </div>
+
+      <label class="terms" for="terms">
+        <input type="checkbox" id="terms" name="terms" />
+        I agree to all term, privacy policy and fees
+      </label>
+      <button type="submit">Sign Up</button>
+    </form>
+    <p>Already have an account? <a href="/login.html">Log in</a></p>
+  </body>
+
+  <script src="script.js"></script>
+</html>
