@@ -2,12 +2,12 @@ const users = [
   {
     name: "John Doe",
     email: "johndoe2006@gmail.com",
-    password: "Password1",
+    password: "Password1.",
   },
   {
     name: "Jane Smith",
     email: "janesmith2008@gmail.com",
-    password: "Password2",
+    password: "Password2.",
   },
 ];
 
@@ -34,10 +34,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const inputs = form.querySelectorAll("form > div");
 
     function validatePassword(password) {
-      const minLength = 8;
-      const hasUppercase = /[A-Z]/.test(password);
-      const hasSymbol = /[^a-zA-Z0-9]/.test(password);
-      return password.length >= minLength && hasUppercase && hasSymbol;
+      const regex = /^(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,}$/;
+      return regex.test(password);
     }
 
     inputs.forEach((div) => {
@@ -50,6 +48,14 @@ document.addEventListener("DOMContentLoaded", function () {
           errorMsg.remove();
         }
       });
+    });
+
+    const checkbox = document.getElementById("terms");
+
+    checkbox.addEventListener("change", function () {
+      const div = document.querySelector(".checkbox");
+      const errorMsg = div.querySelector(".error-message");
+      errorMsg.remove();
     });
 
     form.addEventListener("submit", function (e) {
@@ -79,6 +85,10 @@ document.addEventListener("DOMContentLoaded", function () {
             showError(inputField, "Email already exists");
             formIsValid = false;
             return;
+          } else if (!/\S+@\S+\.\S+/.test(value)) {
+            showError(inputField, "Invalid email format");
+            formIsValid = false;
+            return;
           }
         }
 
@@ -102,6 +112,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (!form.querySelector("input[type=checkbox]").checked) {
         formIsValid = false;
+        const checkboxError = document.createElement("p");
+        checkboxError.className = "error-message";
+        checkboxError.textContent =
+          "You must agree to the terms and conditions";
+        form.querySelector(".checkbox").appendChild(checkboxError);
         return;
       }
 
