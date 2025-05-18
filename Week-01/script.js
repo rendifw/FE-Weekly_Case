@@ -191,7 +191,17 @@ document.addEventListener("DOMContentLoaded", function () {
             popup.remove();
           });
         } else {
-          alert("Invalid username or password.");
+          const popup = document.createElement("div");
+          popup.className = "popup";
+          popup.innerHTML = `
+            <h2>Invalid username or password</h2>
+            <button class="close-popup">Try again</button>
+          `;
+          document.body.appendChild(popup);
+          const closeButton = popup.querySelector(".close-popup");
+          closeButton.addEventListener("click", function () {
+            popup.remove();
+          });
         }
       }
     });
