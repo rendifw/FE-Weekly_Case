@@ -7,7 +7,7 @@ import { useState } from "react";
 const ProductCard = ({ title, price, category, image }) => {
   const [bookmarked, setBookmarked] = useState(false);
   return (
-    <div className="flex flex-col items-center justify-start shadow-xl rounded-xl transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl">
+    <div className="flex flex-col items-center justify-start shadow-xl rounded-xl transition-transform duration-300 cursor-pointer ease-in-out transform hover:scale-105 hover:shadow-2xl">
       <div className="w-full h-[222px] relative">
         <div className="flex justify-center h-[222px] rounded-xl">
           <img
